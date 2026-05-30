@@ -15,8 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.WALLPAPER_BLOCK);
-        blockWithItem(ModBlocks.WALLPAPER_BLOCK_STRIP);
+        blockWithItem(ModBlocks.BACKROOMS_FLOOR);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

@@ -102,6 +102,7 @@ public class Liminality_Limited {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.WALLPAPER_BLOCK);
             event.accept(ModBlocks.WALLPAPER_BLOCK_STRIP);
+            event.accept(ModBlocks.BACKROOMS_FLOOR);
         }
     }
 

@@ -19,8 +19,11 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> WALLPAPER_BLOCK = registerBlock("wallpaper_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.WOOL)));
+                    .strength(4f).sound(SoundType.WOOD)));
     public static final DeferredBlock<Block> WALLPAPER_BLOCK_STRIP = registerBlock("wallpaper_block_strip",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BACKROOMS_FLOOR = registerBlock("backrooms_floor",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).sound(SoundType.WOOL)));
 
