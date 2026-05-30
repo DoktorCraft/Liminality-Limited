@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "liminality_limited:block/wallpaper_block_top",
+    "top": "liminality_limited:block/wallpaper_block_top",
+    "side": "liminality_limited:block/wallpaper_block_strip"
+  }
+}
