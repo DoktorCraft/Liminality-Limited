@@ -2,6 +2,10 @@
   "itemGroup.liminality_limited": "Liminality Limited",
 
   "block.liminality_limited.wallpaper_block": "Wallpaper Block",
-  "block.liminality_limited.wallpaper_block_strip": "Wallpaper Block Strip",
-  "block.liminality_limited.backrooms_floor": "Backrooms Floor"
+  "block.liminality_limited.wallpaper_block_strip": "Striped Wallpaper Block",
+  "block.liminality_limited.backrooms_floor": "Backrooms Floor",
+
+  "creativetab.liminality_limited": "Liminality Limited",
+
+  "subtitle.electric_hum": "Electric Hum"
 }

@@ -1,0 +1,9 @@
+{
+  "electric_hum": {
+    "category": "block",
+    "subtitle": "subtitle.electric_hum",
+    "sounds": [
+      "liminality_limited:electric_hum"
+    ]
+  }
+}

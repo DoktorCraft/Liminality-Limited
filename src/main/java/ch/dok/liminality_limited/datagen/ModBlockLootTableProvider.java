@@ -29,6 +29,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WALLPAPER_BLOCK.get());
         dropSelf(ModBlocks.WALLPAPER_BLOCK_STRIP.get());
         dropSelf(ModBlocks.BACKROOMS_FLOOR.get());
+        dropSelf(ModBlocks.FLUORESCENT_BLOCK.get());
     }
 
     @Override

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lit=false,powered=false": {
+      "model": "liminality_limited:block/fluorescent_block"
+    },
+    "lit=false,powered=true": {
+      "model": "liminality_limited:block/fluorescent_block"
+    },
+    "lit=true,powered=false": {
+      "model": "liminality_limited:block/fluorescent_block_on"
+    },
+    "lit=true,powered=true": {
+      "model": "liminality_limited:block/fluorescent_block_on"
+    }
+  }
+}

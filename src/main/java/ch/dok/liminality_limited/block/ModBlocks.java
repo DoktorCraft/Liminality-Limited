@@ -1,6 +1,7 @@
 package ch.dok.liminality_limited.block;
 
 import ch.dok.liminality_limited.Liminality_Limited;
+import ch.dok.liminality_limited.block.custom.FluorescentBlock;
 import ch.dok.liminality_limited.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -26,6 +27,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BACKROOMS_FLOOR = registerBlock("backrooms_floor",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).sound(SoundType.WOOL)));
+    public static final DeferredBlock<Block> FLUORESCENT_BLOCK = registerBlock("fluorescent_block",
+            () -> new FluorescentBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.COPPER_BULB).lightLevel(state -> state.getValue(FluorescentBlock.LIT) ? 15 : 0)));
 
 
 

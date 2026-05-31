@@ -1,7 +1,10 @@
 package ch.dok.liminality_limited;
 
 import ch.dok.liminality_limited.block.ModBlocks;
+import ch.dok.liminality_limited.client.FluorescentBlockSoundHandler;
+import ch.dok.liminality_limited.item.ModCreativeModeTabs;
 import ch.dok.liminality_limited.item.ModItems;
+import ch.dok.liminality_limited.sound.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -25,6 +28,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -72,15 +76,14 @@ public class Liminality_Limited {
         // Register the Deferred Register to the mod event bus so items get registered
         ModItems.ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
-        CREATIVE_MODE_TABS.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Liminality_limited) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
-
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -97,14 +100,6 @@ public class Liminality_Limited {
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.WALLPAPER_BLOCK);
-            event.accept(ModBlocks.WALLPAPER_BLOCK_STRIP);
-            event.accept(ModBlocks.BACKROOMS_FLOOR);
-        }
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -121,6 +116,15 @@ public class Liminality_Limited {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+    }
+    // NeoForge – NICHT Fabric!
+    @EventBusSubscriber(modid = "liminality_limited", bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
+    public class ClientEventHandler {
+
+        @SubscribeEvent
+        public static void onClientTick(ClientTickEvent.Post event) {
+            FluorescentBlockSoundHandler.tick();
         }
     }
 }

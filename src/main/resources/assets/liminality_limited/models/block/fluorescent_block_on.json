@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "liminality_limited:block/fluorescent_block_on"
+  }
+}
