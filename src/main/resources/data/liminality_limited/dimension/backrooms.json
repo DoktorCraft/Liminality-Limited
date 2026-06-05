@@ -1,0 +1,11 @@
+{
+  "type": "liminality_limited:backrooms_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "liminality_limited:liminal_void",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "liminality_limited:liminal_biome"
+    }
+  }
+}
