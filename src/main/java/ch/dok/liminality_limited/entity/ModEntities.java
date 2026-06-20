@@ -16,7 +16,7 @@ public class ModEntities {
 
     public static final Supplier<EntityType<TheDoktorEntity>> THE_DOKTOR = ENTITY_TYPES.register("the_doktor",
             () -> EntityType.Builder.<TheDoktorEntity>of(TheDoktorEntity::new, MobCategory.MONSTER)
-                    .sized(1.2f, 1.25f)
+                    .sized(0.8f, 1.15f)
                     .build("liminality_limited:the_doktor"));
 
     public static void register(IEventBus eventBus) {
