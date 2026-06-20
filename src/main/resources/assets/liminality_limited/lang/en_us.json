@@ -8,5 +8,8 @@
 
   "creativetab.liminality_limited": "Liminality Limited",
 
-  "subtitle.electric_hum": "Electric Hum"
+  "subtitle.electric_hum": "Electric Hum",
+
+  "entity.liminality_limited.the_doktor": "The Doktor",
+  "item.liminality_limited.the_doktor_spawn_egg": "The Doktor Spawn Egg"
 }

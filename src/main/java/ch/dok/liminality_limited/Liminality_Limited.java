@@ -3,9 +3,12 @@ package ch.dok.liminality_limited;
 import ch.dok.liminality_limited.block.ModBlocks;
 import ch.dok.liminality_limited.client.FluorescentBlockSoundHandler;
 import ch.dok.liminality_limited.client.LiminalSkyEffects;
+import ch.dok.liminality_limited.entity.ModEntities;
+import ch.dok.liminality_limited.entity.custom.TheDoktorEntity;
 import ch.dok.liminality_limited.item.ModCreativeModeTabs;
 import ch.dok.liminality_limited.item.ModItems;
 import ch.dok.liminality_limited.sound.ModSounds;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
@@ -82,6 +85,9 @@ public class Liminality_Limited {
         ModCreativeModeTabs.register(modEventBus);
 
         ModSounds.register(modEventBus);
+        ModEntities.register(modEventBus);
+
+        modEventBus.addListener(this::registerEntityAttributes);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Liminality_limited) to respond directly to events.
@@ -90,6 +96,10 @@ public class Liminality_Limited {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    private void registerEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.THE_DOKTOR.get(), TheDoktorEntity.createAttributes().build());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

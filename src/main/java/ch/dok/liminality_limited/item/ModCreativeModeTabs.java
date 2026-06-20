@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WALLPAPER_BLOCK_STRIP);
                         output.accept(ModBlocks.BACKROOMS_FLOOR);
                         output.accept(ModBlocks.FLUORESCENT_BLOCK);
+                        output.accept(ModItems.THE_DOKTOR_SPAWN_EGG);
                     }).build());
 
 
